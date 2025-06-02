@@ -2960,6 +2960,18 @@ namespace System.Windows.Forms
 
 		internal override IntPtr CreateWindow(CreateParams cp)
 		{
+			XSetWindowAttributes	Attributes;
+			Hwnd			hwnd;
+			Hwnd			parent_hwnd = null;
+			int			X;
+			int			Y;
+			int			Width;
+			int			Height;
+			IntPtr			ParentHandle;
+			IntPtr			WholeWindow;
+			IntPtr			ClientWindow;
+			SetWindowValuemask	ValueMask;
+
 			XSetWindowAttributes Attributes;
 			Hwnd hwnd;
 			Hwnd parent_hwnd = null;

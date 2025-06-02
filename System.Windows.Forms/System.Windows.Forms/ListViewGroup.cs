@@ -82,15 +82,13 @@ namespace System.Windows.Forms
 			try
 			{
 				count = info.GetInt32("ItemsCount");
-			}
-			catch (SerializationException e)
-			{
+			} catch (SerializationException) {
 				// Mono backwards compat
 				try
 				{
 					count = info.GetInt32("ListViewItemCount");
 				}
-				catch (SerializationException e2) {}
+				catch (SerializationException) {}
 			}
 
 			if (items == null)
