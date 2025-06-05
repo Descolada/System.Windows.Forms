@@ -613,8 +613,19 @@ namespace System.Windows.Forms
 
 		protected override void Dispose (bool disposing)
 		{
-			if (disposing)
+			try
 			{
+				if (disposing)
+				{
+					if (Disposed != null)
+					{
+						Disposed(this, EventArgs.Empty);
+					}
+				}
+			}
+			finally
+			{
+				base.Dispose(disposing);
 			}
 		}
 
