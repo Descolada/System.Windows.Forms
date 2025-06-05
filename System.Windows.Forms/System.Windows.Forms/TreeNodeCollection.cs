@@ -211,17 +211,14 @@ namespace System.Windows.Forms
 
 		public virtual void Clear ()
 		{
-			TreeView tree_view = TreeView;
-			if (tree_view != null)
-				tree_view.SelectedNode = null;
 			while (count > 0)
 				RemoveAt(0, false);
 
 			Array.Clear (nodes, 0, count);
 			count = 0;
 
-			if (tree_view != null)
-			{
+			TreeView tree_view = TreeView;
+			if (tree_view != null) {
 				tree_view.UpdateBelow (owner);
 				tree_view.RecalculateVisibleOrder (owner);
 				tree_view.UpdateScrollBars (false);
