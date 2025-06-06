@@ -83,8 +83,8 @@ namespace System.Resources
 			{
 				if (ex.ParamName == "type")
 					throw new TypeLoadException ("Could not find type", ex); //FIXME: error message?
-				else
-					throw ex;
+				else 
+					throw;
 			}
 		}
 

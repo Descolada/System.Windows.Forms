@@ -190,19 +190,13 @@ namespace System.Resources
 				catch (XmlException ex)
 				{
 					throw new ArgumentException ("Invalid ResX input.", ex);
-				}
-				catch (SerializationException ex)
-				{
-					throw ex;
-				}
-				catch (TargetInvocationException ex)
-				{
-					throw ex;
-				}
-				catch (Exception ex)
-				{
-					XmlException xex = new XmlException (ex.Message, ex,
-														 xmlReader.LineNumber, xmlReader.LinePosition);
+				} catch (SerializationException) {
+					throw;
+				} catch (TargetInvocationException) {
+					throw;
+				} catch (Exception ex) {
+					XmlException xex = new XmlException (ex.Message, ex, 
+						xmlReader.LineNumber, xmlReader.LinePosition);
 					throw new ArgumentException ("Invalid ResX input.", xex);
 				}
 
@@ -346,28 +340,21 @@ namespace System.Resources
 				try
 				{
 					hashtable [name] = node.GetValue (assemblyNames);
-				}
-				catch (TypeLoadException ex)
-				{
+				} catch (TypeLoadException) {
 					// different error messages depending on type of resource, hacky solution
 					if (node.handler is TypeConverterFromResXHandler)
 						hashtable [name] = null;
-					else
-						throw ex;
+					else 
+						throw;
 				}
-			}
-			else     // there is a typeresolver or its null
-			{
-				try
-				{
-					hashtable [name] = node.GetValue (typeresolver);
-				}
-				catch (TypeLoadException ex)
-				{
+			} else { // there is a typeresolver or its null
+				try {
+					hashtable [name] = node.GetValue (typeresolver); 
+				} catch (TypeLoadException) {
 					if (node.handler is TypeConverterFromResXHandler)
 						hashtable [name] = null;
-					else
-						throw ex;
+					else 
+						throw;
 				}
 			}
 		}

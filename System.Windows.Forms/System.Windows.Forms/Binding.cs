@@ -408,8 +408,7 @@ namespace System.Windows.Forms
 					FireBindingComplete (BindingCompleteContext.DataSourceUpdate, e, e.Message);
 					return false;
 				}
-
-				throw e;
+				throw;
 			}
 
 			if (formatting_enabled)
@@ -468,8 +467,7 @@ namespace System.Windows.Forms
 					FireBindingComplete (BindingCompleteContext.ControlUpdate, e, e.Message);
 					return;
 				}
-
-				throw e;
+				throw;
 			}
 
 			if (formatting_enabled)

@@ -2874,8 +2874,7 @@ namespace System.Windows.Forms
 				OnDataError (false, args);
 
 				if (args.ThrowException)
-					throw e;
-
+					throw;
 				return false;
 			}
 
