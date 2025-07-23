@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -43,6 +43,14 @@
   <ItemGroup>
     <Compile Include="..\Mono.Shared\AssemblyRef.cs" Link="AssemblyRef.cs" />
     <Compile Include="..\Mono.Shared\Consts.cs" Link="Consts.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assembly\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
