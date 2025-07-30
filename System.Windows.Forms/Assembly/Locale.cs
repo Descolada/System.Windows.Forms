@@ -42,9 +42,8 @@ namespace System.Windows.Forms
 		#endregion  // Local Variables
 
 		#region Constructors
-		static Locale ()
-		{
-			rm = new ResourceManager("System.Windows.Forms", Assembly.GetExecutingAssembly());
+		static Locale () {
+		        rm = new ResourceManager("System.Windows.Forms.resources.System.Windows.Forms", Assembly.GetExecutingAssembly());
 		}
 		#endregion
 
