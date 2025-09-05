@@ -2972,18 +2972,6 @@ namespace System.Windows.Forms
 			IntPtr			ClientWindow;
 			SetWindowValuemask	ValueMask;
 
-			XSetWindowAttributes Attributes;
-			Hwnd hwnd;
-			Hwnd parent_hwnd = null;
-			int X;
-			int Y;
-			int Width;
-			int Height;
-			IntPtr ParentHandle;
-			IntPtr WholeWindow;
-			IntPtr ClientWindow;
-			SetWindowValuemask ValueMask;
-			int[] atoms;
 			hwnd = new Hwnd();
 			Attributes = new XSetWindowAttributes();
 			X = cp.X;
